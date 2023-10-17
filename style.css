@@ -33,3 +33,196 @@ Nastav je receptům jako obrázky na pozadí (tj. nepřidávej je jako <img> do 
 Na rozložení prvků NEPOUŽÍVEJ absolutní pozicování, ale pouze flexboxy.
 Flexboxy mohou být vnořené do sebe, klidně několikrát.
 */
+
+body {
+	font-family: 'Source Sans 3', sans-serif;
+	font-size: 14px;
+	color: white;
+	text-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+	display: flex;
+	flex-direction: column;
+}
+
+.hlavni {
+	flex: 1 0 200px;
+}
+
+.maly {
+	flex: 1 0 90px;
+}
+
+h1,
+h2{
+	font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+	font-size: 28px;
+	margin: 0;
+	padding: 0;
+}
+
+h2 {
+	font-size: 18px;
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+}
+
+/* popř. to změnit na hlavní a udělat všude zvlášť */
+.recept { 
+	padding: 10px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.hlavni {
+	background-image: url(images/salat.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	min-height: 200px;
+}
+
+.nadpis {
+	margin: 0;
+	margin-top: auto;
+	flex: 1 0 100%;
+}
+
+.popisek {
+	flex: 1 0 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.maly {
+	min-height: 90px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	border-top: 1px solid white;
+}
+
+.jedna {
+	background-image: url(images/chlebicek.jpg);
+}
+
+.dva {
+	background-image: url(images/tacos.jpg);
+}
+
+.tri {
+	background-image: url(images/cizrna.jpg);
+}
+
+.ctyri {
+	background-image: url(images/burger.jpg);
+}
+
+footer {
+	padding: 30px;
+}
+
+@media screen and (min-width: 480px) {
+	.male {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.maly {
+		flex: 1 0 50%;
+	}
+
+	.hlavni {
+		min-height: 250px;
+	}
+
+	.maly {
+		min-height: 150px;
+	}
+	
+	.jedna,
+	.tri {
+		border-right: 1px solid white;
+	}
+
+	/* body {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.hlavni {
+		flex: 1 0 100%;
+	}
+
+	.maly {
+		flex: 1 0 50%;
+	}
+
+	.jedna,
+	.tri {
+		border-right: 1px solid white;
+	}
+
+	.hlavni {
+		min-height: 250px;
+	}
+
+	.maly {
+		min-height: 150px;
+	} */
+
+	h1 {
+		font-size: 36px;
+	}
+
+	h2 {
+		font-size: 22px;
+	}
+}
+
+@media screen and (min-width: 860px) {
+
+	body {
+		flex-direction: row;
+	}
+
+	.velke {
+		flex: 1 0 calc(100% / 3);
+	}
+
+	.male {
+		flex: 1 0 calc((100% / 3) * 2);
+	}
+
+	.maly {
+		flex: 1 1 50%;
+	}
+
+	.jedna,
+	.dva {
+		border-top: 0;
+	}
+
+	.hlavni {
+		border-right: 1px solid white;
+		min-height: 400px;
+	}
+
+	.maly {
+		min-height: 200px;
+	}
+
+	h1 {
+		font-size: 48px;
+	}
+
+	h2 {
+		font-size: 28px;
+	}
+}
